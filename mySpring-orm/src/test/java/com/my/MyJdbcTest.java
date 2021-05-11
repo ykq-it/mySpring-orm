@@ -30,6 +30,7 @@ public class MyJdbcTest {
     }
 
     private static void dynamicJdbc() {
+        // 面向对象(Object Oriented,OO)
         Order select = new Order();
         select.setMemberId(2L);
         select.setId(2L);
@@ -50,7 +51,8 @@ public class MyJdbcTest {
         // 通过条件反射获得类型
         Class clazz = condition.getClass();
 
-
+        //无反射，不框架
+        //无正则，不架构
         Field[] fields = clazz.getDeclaredFields();
         for (Field field : fields) {
             String fieldName = field.getName();
@@ -146,8 +148,11 @@ public class MyJdbcTest {
 
     private static List<Order> originSelect(String sql) {
         List<Order> orders = new ArrayList<>();
+        // 连接对象
         Connection con = null;
+        // 语句集
         PreparedStatement ps = null;
+        // 结果集
         ResultSet rs = null;
         try {
             // 1、加载驱动
