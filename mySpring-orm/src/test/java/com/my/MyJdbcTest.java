@@ -26,7 +26,7 @@ public class MyJdbcTest {
         originJdbc();
 
         // 2、测试改进版
-        dynamicJdbc();
+//        dynamicJdbc();
     }
 
     private static void dynamicJdbc() {
@@ -155,11 +155,12 @@ public class MyJdbcTest {
         // 结果集
         ResultSet rs = null;
         try {
-            // 1、加载驱动
-            Class.forName("com.mysql.jdbc.Driver");
+            // 1、加载驱动，现在的jdk可以默认加载驱动
+//            Class.forName("com.mysql.jdbc.Driver");
             // 2、创建连接
             con = DriverManager.getConnection("jdbc:mysql://101.200.177.197:3306/study","customer","123qwe");
             // 3、创建语句集
+
             ps = con.prepareStatement(sql);
             // 4、执行
             rs = ps.executeQuery();

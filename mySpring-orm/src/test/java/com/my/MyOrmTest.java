@@ -23,7 +23,8 @@ import javax.mycore.common.Page;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class MyOrmTest {
 
-    @Autowired private MemberDao memberDao;
+    @Autowired
+    private MemberDao memberDao;
 
     @Test
     public void testSelectForPage() {
